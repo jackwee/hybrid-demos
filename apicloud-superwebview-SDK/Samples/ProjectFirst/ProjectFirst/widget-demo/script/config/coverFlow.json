@@ -1,0 +1,214 @@
+{
+    "title": "3D 相册",
+    "data":[
+            {
+            "title": "边框设置",
+            "data": [
+                     {
+                     "type": "inputGroup",
+                     "data": [
+                         {
+                             "label": "横坐标",
+                             "type": "text",
+                             "id": "x"
+                         },
+                         {
+                             "label": "纵坐标",
+                             "type": "text",
+                             "id": "y"
+                         }]
+                     },
+                     {
+                     "type": "inputGroup",
+                     "data": [
+                         {
+                             "label": "宽度值",
+                             "type": "w",
+                             "id": "w"
+                         },
+                         {
+                             "label": "高度值",
+                             "type": "text",
+                             "id": "h"
+                         }
+                              ]
+                     }
+                     ]
+            },
+            {
+            "title": "背景颜色",
+            "data": [
+                     {
+                     "type": "inputGroup",
+                     "data": [
+                              {
+                              "label": "背景颜色",
+                              "type": "text",
+                              "id": "bgColor",
+                              "value":"#333333"
+                              }
+                              ]
+                     }
+                     ]
+            },
+        {
+            "title": "背景图片",
+            "data": [
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img0",
+                            "value":"widget://image/coverFlow/img0.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img1",
+                            "value":"widget://image/coverFlow/img1.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img2",
+                            "value":"widget://image/coverFlow/img2.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img3",
+                            "value":"widget://image/coverFlow/img3.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img4",
+                            "value":"widget://image/coverFlow/img4.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img5",
+                            "value":"widget://image/coverFlow/img5.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img6",
+                            "value":"widget://image/coverFlow/img6.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img7",
+                            "value":"widget://image/coverFlow/img7.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img8",
+                            "value":"widget://image/coverFlow/img8.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "图片",
+                            "type": "text",
+                            "id": "img9",
+                            "value":"widget://image/coverFlow/img9.png"
+                        }
+                    ]
+                }
+            ]
+        },
+            {
+            "title": "牛刀小试",
+            "data": [
+                     {
+                     "type": "buttonGroup",
+                     "data":[
+                             {
+                             "text": "打开",
+                             "type": "primary",
+                             "click": "open"
+                             },
+                             {
+                             "text": "关闭",
+                             "type": "danger",
+                             "click": "close"
+                             }
+                             ]
+                     },
+                {
+                    "type": "buttonGroup",
+                    "data":[
+                        {
+                            "text": "显示",
+                            "type": "info",
+                            "click": "show"
+                        },
+                        {
+                            "text": "隐藏",
+                            "type": "warning",
+                            "click": "hide"
+                        }
+                    ]
+                }
+                     ]	
+            },
+            {
+            "title": "示例代码",
+            "data": [
+                     {
+                     "type": "codeBlock",
+                     "data": "var obj = api.require('circularMenu');\nvar arrayItems = new Array();\nfor (var i=0;i<5;i++){\narrayItems[i]={\nnormal:'widget://res/circularMenu2.png',\nhighlight:'widget://res/circularMenu2light.png',\ntitle:'按钮二',\ntitleColor:'#FF0000'\n}\n}\nobj.open({\nitems: arrayItems\n}, function(ret, err){\nret.index;\nret.pointerIndex;\n});\n"
+                     }
+                     ]
+            }
+            ]
+}

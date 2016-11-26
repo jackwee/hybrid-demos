@@ -1,0 +1,73 @@
+{
+	"title": "百度地图开放平台(待完成)",
+	"data":[
+		{
+			"title": "边框设置",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "横坐标",
+							"type": "text",
+							"id": "mapX",
+							"value": "0"
+						},
+						{
+							"label": "纵坐标",
+							"type": "text",
+							"id": "mapY",
+							"value": "64"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "宽度值",
+							"type": "text",
+							"id": "mapWidth",
+							"value": "320"
+						},
+						{
+							"label": "高度值",
+							"type": "text",
+							"id": "mapHeight",
+							"value": "300"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "牛刀小试",
+			"data": [
+				{
+					"type": "buttonGroup",
+					"data":[
+						{
+							"text": "打开地图",
+							"type": "primary",
+							"click": "openBaiduMap"
+						},
+						{
+							"text": "关闭地图",
+							"type": "danger",
+							"click": "closeBaiduMap"
+						}
+					]
+				}
+			]	
+		},
+		{
+			"title": "示例代码",
+			"data": [
+				{
+					"type": "codeBlock",
+					"data": "var obj = api.require('lineChart');\nobj.open({\n    x:0,\n    y:64,\n    width:320,\n    height:300,\n    yAxis:{'max':1000,'step':200},\n    xAxis:{'indexs':['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月','一月'],'screenXcount':7},\nlines:[{ 'color': ' #800080', 'datas':[ 200,400,-300,500,-400,600,400,0,500,-100,800,100],id:1},\n     {'color': '#7FFFAA', 'datas':[ -200,-400,300,-500,400,-600,-400,0,-500,100,-800,-100],id:2}],\n    backGroundColor:'#F0FFFF',\n    coorLineColor:'#C0C0C0',\n    markColor:'#051353',\n    id:1\n});"
+				}
+			]	
+		}
+	]
+}

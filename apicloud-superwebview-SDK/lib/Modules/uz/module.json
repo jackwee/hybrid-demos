@@ -1,0 +1,31 @@
+[{
+    "name":"push",
+    "class":"UZPush",
+    "methods":["bind","unbind","joinGroup","leaveGroup","leaveAllGroup","setListener","removeListener","setPreference"]
+}
+,{
+    "name":"mam",
+    "class":"UZMAM",
+    "methods":["checkUpdate","addEvent"]
+}
+,{
+    "name":"baiduLocation",
+    "class":"UZBaiduLocation",
+    "methods":["startLocation","stopLocation","getLocation"]
+}
+,{
+ "name":"actionButton",
+ "class":"UZActionButton",
+ "methods":["open","close","show","hide"]
+ }
+,{
+ "name":"aliPay",
+ "class":"UZAliPay",
+ "methods":["pay","config","payOrder"]
+ }
+, {
+ "name":"arcProgress",
+ "class":"UZArcProgress",
+ "methods":["open","close","setValue","show","hide"]
+ }
+]

@@ -1,0 +1,197 @@
+{
+	"title": "贝塞尔曲线",
+	"data":[
+		{
+			"title": "边框设置",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "横坐标",
+							"type": "text",
+							"id": "x",
+							"value": ""
+						},
+                        {
+                            "label": "纵坐标",
+                            "type": "text",
+                            "id": "y",
+                            "value": ""
+                        }
+					]
+				},
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "宽度值",
+                            "type": "text",
+                            "id": "w",
+                            "value": ""
+                        },
+                        {
+                            "label": "高度值",
+                            "type": "text",
+                            "id": "h",
+                            "value": ""
+                        }
+                    ]
+                }
+			]
+		},
+        {
+            "title": "颜色设置",
+            "data": [
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "背景颜色",
+                            "type": "text",
+                            "id": "bgColor",
+                            "value": "#FFB6C1"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "坐标颜色",
+                            "type": "text",
+                            "id": "coordColor",
+                            "value": "#4B0082"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "标注颜色",
+                            "type": "text",
+                            "id": "markColor",
+                            "value": "#4B0082"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "曲线颜色",
+                            "type": "text",
+                            "id": "lineColor",
+                            "value": "#000080"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "气泡图片",
+            "data": [
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "向上气泡",
+                            "type": "text",
+                            "id": "bubbleUp",
+                            "value": "widget://image/graph/bubble_up.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "向下气泡",
+                            "type": "text",
+                            "id": "bubbleDown",
+                            "value": "widget://image/graph/bubble_down.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "高级设置",
+            "data": [
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "刷新类型",
+                            "type": "text",
+                            "id": "reloadType",
+                            "value": "",
+                            "placeholder": "0,左拼接;1,右拼接;2,刷新.默认2."
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+			"title": "牛刀小试",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "滚动方向",
+							"type": "text",
+							"id": "orient",
+                            "disabled": "disabled"
+						}
+					]
+				},
+				{
+					"type": "buttonGroup",
+					"data":[
+						{
+							"text": "打开",
+							"type": "primary",
+							"click": "open"
+						},
+						{
+							"text": "刷新",
+							"type": "info",
+							"click": "reload"
+						},
+						{
+							"text": "关闭",
+							"type": "danger",
+							"click": "close"
+						}
+					]
+				},
+                {
+                    "type": "buttonGroup",
+                    "data":[
+                        {
+                            "text": "显示",
+                            "type": "info",
+                            "click": "show"
+                        },
+                        {
+                            "text": "隐藏",
+                            "type": "warning",
+                            "click": "hide"
+                        }
+                    ]
+                }
+			]	
+		},
+		{
+			"title": "示例代码",
+			"data": [
+				{
+					"type": "codeBlock",
+					"data": ""
+				}
+			]	
+		}
+	]
+}

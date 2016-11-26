@@ -1,0 +1,262 @@
+{
+	"title": "滑杆演示",
+	"data":[
+		{
+			"title": "滑条设置",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "横坐标",
+							"type": "text",
+							"id": "viewx",
+							"value": "30"
+						},
+						{
+							"label": "纵坐标",
+							"type": "text",
+							"id": "viewy",
+							"value": "104"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "宽度值",
+							"type": "text",
+							"id": "vieww",
+							"value": "260"
+						},
+						{
+							"label": "高度值",
+							"type": "text",
+							"id": "viewh",
+							"value": "6"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "图片设置",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "背景图片",
+							"type": "text",
+							"id": "bgimageBar",
+							"value": "widget://image/slider/bg.png"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "覆盖图片",
+							"type": "text",
+							"placeholder": "用作滑块划过的区域的背景",
+							"id": "bgimageBarsele",
+							"value": "widget://image/slider/selected.png"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "气泡图片",
+							"type": "text",
+							"id": "selectbgImage",
+							"value": "widget://image/slider/bubble.png"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "滑块图片",
+							"type": "text",
+							"id": "barImgpath",
+							"value": "widget://image/slider/bar.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "气泡设置",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "宽度",
+							"type": "text",
+							"id": "bubbleW",
+							"value": "60"
+						},
+						{
+							"label": "高度",
+							"type": "text",
+							"id": "bubbleH",
+							"value": "40"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "滑块设置",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "宽度值",
+							"type": "text",
+							"id": "barW",
+							"value": "30"
+						},
+						{
+							"label": "高度值",
+							"type": "text",
+							"id": "barH",
+							"value": "20"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "最小值",
+							"type": "text",
+							"id": "minvalue",
+							"value": "0"
+						},
+						{
+							"label": "最大值",
+							"type": "text",
+							"id": "maxvalue",
+							"value": "100"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "默认值",
+							"type": "text",
+							"id": "defaultvalue",
+							"value": "30"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "牛刀小试",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "当前滑块值",
+							"type": "text",
+							"id": "backvalue",
+							"disabled": "disabled"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "新的滑块值",
+							"type": "text",
+							"id": "newBackvalue",
+							"value": "42"
+						}
+					]
+                 },
+                 {
+                     "type": "inputGroup",
+                     "data": [
+                              {
+                              "label": "当前活跃id",
+                              "type": "text",
+                              "id": "mysliderid"
+                          }
+                      ]
+                 },
+				{
+					"type": "buttonGroup",
+					"data":[
+						{
+							"text": "打开",
+							"type": "primary",
+							"click": "openslider"
+						},
+						{
+							"text": "设置滑块值",
+							"type": "info",
+							"click": "setslidervalue"
+						},
+                        {
+                            "text": "关闭",
+                            "type": "danger",
+                            "click": "closslider"
+                        }
+					]
+				},
+                {
+                     "type":"buttonGroup",
+                     "data":[
+                         {
+                             "text": "加锁解锁",
+                             "type": "info",
+                             "click": "locklider"
+                         }
+                     ]
+                 },
+                 {
+                     "type":"buttonGroup",
+                     "data":[
+                             {
+                             "text": "显示",
+                             "type": "info",
+                             "click": "showslider"
+                         }
+                     ]
+                 },
+                 {
+                     "type":"buttonGroup",
+                     "data":[
+                             {
+                             "text": "隐藏",
+                             "type": "warning",
+                             "click": "hideslider"
+                         }
+                     ]
+                 }
+			]	
+		},
+		{
+			"title": "示例代码",
+			"data": [
+				{
+					"type": "codeBlock",
+					"data": "var obj = api.require('slider');\nobj.open({\n    x:30,\n    y:104,\n    width:260,\n    height:6,\n    bgImg:'widget://image/slider_bg.ppng',\nselectedBgImg:'widget://image/slider_selected.png',\nbarW:60,\n    barH:40,\n    barImg:'widget://image/slider_bubble.png',\n    bubbleW:30,\n    bubbleH:18,\n    bubbleImg:'widget://image/slider_bar.png',\n    minValue:0,\n    maxValue:100,\n    defValue:50\n},function(ret,err){\nif(ret.touchCancel){\n  api.alert({msg:ret.value});\n}else{\n  ret.value;\n}\n});"
+				}
+			]	
+		}
+	]
+}

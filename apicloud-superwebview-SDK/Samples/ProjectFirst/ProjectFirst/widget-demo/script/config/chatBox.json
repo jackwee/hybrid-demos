@@ -1,0 +1,300 @@
+{
+	"title": "聊天盒子",
+	"data":[
+		{
+			"title": "颜色设置",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "背景颜色值",
+							"type": "text",
+							"id": "menutypes",
+							"value": "#f2f2f2"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "分割线颜色",
+							"type": "text",
+							"id": "viewx",
+							"value": "#d9d9d9"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "输入框背景",
+							"type": "text",
+							"id": "viewy",
+							"value": "#FFFFFF"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "输入框边框",
+							"type": "text",
+							"id": "centerimgpath",
+							"value": "#b3b3b3"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "表情按钮图片",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "常态图片",
+							"type": "text",
+							"id": "face1",
+							"value": "widget://image/chatBox/face1.png"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "点击图片",
+							"type": "text",
+							"id": "face2",
+							"value": "widget://image/chatBox/face2.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "添加按钮图片",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "常态图片",
+							"type": "text",
+							"id": "add1",
+							"value": "widget://image/chatBox/add1.png"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "点击图片",
+							"type": "text",
+							"id": "add2",
+							"value": "widget://image/chatBox/add2.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "键盘按钮图片",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "常态图片",
+							"type": "text",
+							"id": "key1",
+							"value": "widget://image/chatBox/key1.png"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "点击图片",
+							"type": "text",
+							"id": "key2",
+							"value": "widget://image/chatBox/key2.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "自定义添加按钮",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "常态图片",
+							"type": "text",
+							"id": "cameral1",
+							"value": "widget://image/chatBox/cam1.png"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "点击图片",
+							"type": "text",
+							"id": "cameral2",
+							"value": "widget://image/chatBox/cam2.png"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "按钮标题",
+							"type": "text",
+							"id": "cameral1title",
+							"value": "相册"
+						}
+					]
+                 },
+                 {
+                 "type": "inputGroup",
+                 "data": [
+                          {
+                          "label": "标题大小",
+                          "type": "text",
+                          "id": "titleSizes"
+                          }
+                          ]
+                 },
+                 {
+                 "type": "inputGroup",
+                 "data": [
+                          {
+                          "label": "标题颜色",
+                          "type": "text",
+                          "id": "titleColors"
+                          }
+                          ]
+                 }
+			]
+		},
+		{
+			"title": "自定义表情",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "表情集文件路径",
+							"type": "text",
+							"id": "emojiPath",
+							"value": "widget://image/chatBox/emotion"
+						}
+					]
+				}
+			]
+        },
+        {
+            "title": "页面控制器设置",
+            "data": [
+                 {
+                     "type": "inputGroup",
+                     "data": [
+                          {
+                              "label": "常态颜色",
+                              "type": "text",
+                              "id": "pgColor"
+                          },
+                          {
+                              "label": "选中颜色",
+                              "type": "text",
+                              "id": "pgColorSel"
+                          }
+                      ]
+                 }
+             ]
+        },
+		{
+			"title": "牛刀小试",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "文字输入",
+							"type": "text",
+							"id": "sendMessage",
+							"disabled": "disabled",
+							"placeholder": "您在输入框中输入的文字"
+						}
+					]
+				},
+				{
+					"type": "buttonGroup",
+					"data":[
+						{
+							"text": "打开",
+							"type": "primary",
+							"click": "openInputView"
+						},
+						{
+							"text": "关闭",
+							"type": "danger",
+							"click": "closeInputView"
+						}
+					]
+                 },
+                 {
+                     "type": "buttonGroup",
+                     "data":[
+                         {
+                             "text": "显示",
+                             "type": "info",
+                             "click": "showInputView"
+                         },
+                         {
+                             "text": "隐藏",
+                             "type": "warning",
+                             "click": "hideInputView"
+                         }
+                     ]
+                     },
+                     {
+                     "type": "buttonGroup",
+                     "data":[
+                             {
+                             "text": "弹出键盘",
+                             "type": "info",
+                             "click": "becomeInputView"
+                             },
+                             {
+                             "text": "隐藏键盘",
+                             "type": "warning",
+                             "click": "resignInputView"
+                             }
+                             ]
+                     }
+			]	
+		},
+		{
+			"title": "示例代码",
+			"data": [
+				{
+					"type": "codeBlock",
+					"data": "见文档"
+				}
+			]	
+		}
+	]
+}

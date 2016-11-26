@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        html,body{
+            height: 90%;
+            width: 90%;
+        }
+
+        body{
+            background: url(../image/common/logo.png) no-repeat center;
+            background-size: contain;
+            -webkit-background-size: contain;
+            background-color:#FFFFFF;
+        }
+
+        body{-webkit-user-select:none;}
+
+        #content{
+            text-align: center; position: absolute; bottom: 20%;
+            width: 90%;
+        }
+
+        #play{
+            display: inline-block;
+            background: url(../image/common/play.png) no-repeat;
+            width: 52px; height: 52px;
+            text-indent: -9999px;
+            background-size: contain;
+            -webkit-background-size: contain;
+        }
+        #play.active{
+            background: url(../image/common/play-l.png) no-repeat;
+            background-size: contain;
+            -webkit-background-size: contain;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <span id="play" tapmode="active" onclick="showDefault()">play</span>
+</div>
+</body>
+<script src="../script/api.js"></script>
+<script type="text/javascript">
+
+    window.apiready = function(){
+        api.showProgress({text: "请稍候..."});
+
+        /* 何时显示运行按钮? */
+        var delay = 0;
+
+        /* 是否自动显示? */
+        var module = api.pageParam.module;
+        if(true === api.pageParam.module.autoShow){
+            showDefault();
+            delay = 1000;
+        }else{
+            document.getElementById("content").innerHTML = '<span id="play" tapmode="active" onclick="showDefault()">play</span>';
+        }
+
+        api.hideProgress();
+    }
+
+    /* 展示默认效果. */
+    function showDefault(){
+        /* 获取传入的 module 对象. */
+        var module = api.pageParam["module"];
+
+        /* 从 script/module 读取同名文件. */
+        var filePath = "widget://script/module/" + module.name + ".js";
+
+        api.readFile({
+            path: filePath
+        }, function(ret, err){
+            if(ret.status){
+                eval(ret.data);
+            }else{ // 出错了
+                api.toast({
+                    msg: "竟然无法读取模块数据文件!",
+                    duration: 1500,
+                    location: "top"
+                });
+            }
+        });
+
+        /* 界面类 和 功能类要移除按钮,以及部分模块. */
+        if((0 == module.sortId || 1 == module.sortId ) && ("actionButton" != module.name &&
+                "pullMenu" != module.name)){
+            var  btn = document.getElementById("play");
+            if(btn){
+                btn.outerHTML = "";
+            }
+        }
+    }
+</script>
+</html>

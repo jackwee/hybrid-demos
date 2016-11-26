@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <style>
+
+        #header {
+            /* Webkit (Safari/Chrome 10) */
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #285E82), color-stop(1, #4F879C));
+
+            /* Webkit (Chrome 11+) */
+            background-image: -webkit-linear-gradient(top, #285E82 0%, #4F879C 100%);
+
+            /* W3C Markup, IE10 Release Preview */
+            background-image: linear-gradient(to bottom, #285E82 0%, #4F879C 100%);
+        }
+        #nav{
+            display:-webkit-box;
+            height:44px;
+        }
+        #left {
+            width:80px;
+            color:#fff;
+            background:url(../image/navbtn_back.png) no-repeat 14px 12px;
+            -webkit-background-size:12px 20px;
+        }
+        #left>span {
+            margin-top:13px;
+            margin-left:36px;
+            font-size:18px;
+            height:18px;
+            line-height:18px;
+            color: #fff;
+        }
+        #middle {
+            -webkit-box-flex:1;
+            width:100%;
+            display:-webkit-box;
+            -webkit-box-pack:center;
+            -webkit-box-align:center;
+        }
+        #title {
+            font-size:18px;
+            text-align:center;
+            color:#fff;
+        }
+        #right {
+            width:80px;
+        }
+        section {
+            -webkit-box-flex:1;
+        }
+
+        body {
+            background-color:#FFFFFF;
+        }
+        body{-webkit-user-select:none;}
+    </style>
+    <style>
+        #main{
+            background-color: #fff;
+        }
+        #nav2{
+            height: 50px;
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            border-top:1px solid #dbdcdc;
+            -webkit-box-orient: horizontal;
+            -webkit-flex-flow: row;
+            flex-flow: row;
+        }
+        #nav2 span{
+            display: block; padding-top: 36px;
+            font-size: 14px; color: #47c491;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            background-repeat: no-repeat;
+            background-position: center 10px;
+            background-size: 36px !important;
+            -webkit-background-size: 36px !important;
+        }
+        /*#nav2 span.active, #nav2 span.act{*/
+            /*background-color: #2dbd82; color: #fff;*/
+        /*}*/
+        #nav2 span:last-child{
+            border-right: 0;
+        }
+        #nav2 .preview{
+            background-image: url(../image/common/preview.png);
+        }
+        #nav2 .code{
+            background-image: url(../image/common/code.png);
+        }
+        #nav2 .module{
+            background-image: url(../image/common/mod.png);
+        }
+        #nav2 .preview.active, #nav2 .preview.act{
+            background-image: url(../image/common/preview-l.png);
+        }
+        #nav2 .code.active, #nav2 .code.act{
+            background-image: url(../image/common/code-l.png);
+        }
+        #nav2 .module.active, #nav2 .module.act{
+            background-image: url(../image/common/mod-l.png);
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <nav id="nav">
+            <a id="left" tapmode="" onclick="api.closeWin();">
+                <span>返回</span>
+            </a>
+            <div id="middle">
+                <strong id="title"></strong>
+            </div>
+            <a id="right">
+            </a>
+        </nav>
+    </div>
+    <div id="main">
+
+    </div>
+    <div id="nav2">
+        <span id ="preview" tapmode="active" onclick="openDetailFrame(0)" class="preview act"></span>
+        <span id="code" tapmode="active" onclick="openDetailFrame(1)" class="code"></span>
+        <span id="module" tapmode="active" onclick="openDetailFrame(2)" class="module"></span>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    window.apiready = function() {
+        /* 记录idx 与 对应的页面 */
+        window.pages = [
+            {
+                idx: 0,
+                name: "show",
+                url: "show.html",
+                pageParam: {
+                    module: api.pageParam["module"]
+                },
+                reload: true
+            },
+            {
+                idx: 1,
+                name: "code",
+                url: "code.html",
+                pageParam: {
+                    module: api.pageParam["module"]
+                },
+                reload: false
+            },
+            {
+                idx: 2,
+                name: "diy",
+                url: "diy.html",
+                pageParam: {
+                    module: api.pageParam["module"]
+                },
+                reload: false
+            }
+        ];
+
+        /* 智能调整顶部导航栏 */
+        var header = $api.byId('header');
+        $api.fixIos7Bar(header);
+
+        /* 根据传入的内容修改导航栏标题. */
+        var module = api.pageParam["module"];
+        document.getElementById("title").innerHTML = module.name;
+
+        /* 一个简单的预加载策略:优化整体体验. */
+        if("ios" != api.systemType){
+            openDetailFrame(1);
+        }
+
+        openDetailFrame(0);
+    }
+
+    // --------------------------------------------------
+
+    /* 切换到不同的页面. */
+    function openDetailFrame(idx){
+        /* 不传idx,直接返回. */
+        if(undefined === idx){
+            return;
+        }
+
+        if(0 == idx){
+            document.getElementById("preview").className = "preview act";
+            document.getElementById("code").className = "code";
+            document.getElementById("module").className = "module";
+        }
+
+        if(1 == idx){
+            document.getElementById("preview").className = "preview";
+            document.getElementById("code").className = "code act";
+            document.getElementById("module").className = "module";
+        }
+
+        if(2 == idx){
+            document.getElementById("preview").className = "preview";
+            document.getElementById("code").className = "code";
+            document.getElementById("module").className = "module act";
+        }
+
+        /* 已经位于当前页面,也直接返回. */
+        if(undefined !== arguments.callee.index && idx === arguments.callee.index){
+            return;
+        }
+
+        /* 记录当前页面. */
+        arguments.callee.index = idx;
+
+        for(var idx in pages){
+            var page = pages[idx]
+
+            if(page.idx == arguments.callee.index){
+                break
+            }
+        }
+
+        if("undefined" === typeof page){ /* 看来没合适的页面. */
+            return;
+        }
+
+        var y = 44;
+
+        if("ios" == api.systemType && parseInt(api.systemVersion) >= 7){
+            y = 64;
+        }
+
+        /* 部分模块,同一窗口内只允许存在一个,必须处理这种情况. */
+        if(2 == idx){
+            api.closeFrame({name: pages[0].name});
+        }
+
+        if(0 == idx){
+            api.closeFrame({name: pages[2].name});
+        }
+
+        /* 打开特定窗口. */
+
+        api.openFrame({
+            name: page.name,
+            url: page.url,
+            rect: {
+                x: 0,
+                y: y,
+                w: api.winWidth,
+                h: api.winHeight - y - 52
+            },
+            reload: page.reload,
+            pageParam: page.pageParam,
+            bounces: false,
+            opaque: true
+        });
+    }
+
+    // ------------------------------------------
+</script>
+</html>

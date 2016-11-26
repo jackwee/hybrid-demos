@@ -1,0 +1,6 @@
+
+20160325更新：
+
+1、APIManager增加 - (void)initSDKWithLaunchOptions:(NSDictionary *)launchOptions方法，同时废弃 - (void)initSDK方法。
+2、增加APIUpdateManager类，管理更新操作。
+3、增加云修复完成事件，处理重启应用。

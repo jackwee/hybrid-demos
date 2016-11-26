@@ -1,0 +1,20 @@
+{
+	"title": "系统信息",
+	"data":[
+        {
+            "title": "牛刀小试",
+            "data": [
+                {
+                    "type": "buttonGroup",
+                    "data":[
+                        {
+                            "text": "获取系统信息",
+                            "type": "info",
+                            "click": "showInfo"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+	"title": "进度提示演示",
+	"data":[
+		{
+			"title": "基础设置",
+			"data": [
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "提示框风格",
+							"type": "text",
+							"id": "style",
+							"value": "default"
+						}
+					]
+				},
+				{
+					"type": "inputGroup",
+					"data": [
+						{
+							"label": "提示框动画",
+							"type": "text",
+							"id": "type",
+							"value": "fade",
+							"placeholder": "fade或zoom"
+						}
+					]
+				},
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "标题",
+                            "type": "text",
+                            "id": "title",
+                            "value": "努力加载中..."
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "内容",
+                            "type": "text",
+                            "id": "text",
+                            "value": "请先喝杯茶..."
+                        }
+                    ]
+                },
+                {
+                    "type": "inputGroup",
+                    "data": [
+                        {
+                            "label": "模态",
+                            "type": "text",
+                            "id": "modal",
+                            "value": "0"
+                        }
+                    ]
+                }
+			]
+		},
+		{
+			"title": "牛刀小试",
+			"data": [
+				{
+					"type": "buttonGroup",
+					"data":[
+						{
+							"text": "显示进度提示",
+							"type": "primary",
+							"click": "showProgress"
+						}
+					]
+				}
+			]	
+		},
+		{
+			"title": "示例代码",
+			"data": [
+				{
+					"type": "codeBlock",
+					"data": "api.showProgress({\nstyle: 'default' ,\nanimationType: 'fade' ,\ntitle: '努力加载中...',\ntext: '先喝杯茶...',\nmodal: false\n});"
+				}
+			]	
+		}
+	]
+}
